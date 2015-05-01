@@ -1,0 +1,199 @@
+/* Selectmenu
+----------------------------------*/
+aside span {
+	
+}
+
+.ui-selectmenu {  
+	overflow: hidden; 
+	zoom: 1;
+	display: inline-block;
+	width: 100%;	
+	padding: 11px 0 9px 0;
+	font: bold 16px/22px ProximaNova, arial, sans-serif;
+	color: #333;
+	text-decoration: none;
+	text-align: left;
+	background: #fff url('../media/arrow_down.png') no-repeat 92% 19px;
+	border: 1px solid #f0f0f0;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+ }
+ 
+ .widget .ui-selectmenu {  
+	width: 100%;	
+	padding: 11px 0 9px 0;
+	font: normal 14px/18px ProximaNova, arial, sans-serif;
+	color: #666;
+	background: #f7f7f7 url('../media/arrow_down.png') no-repeat 92% 19px;
+	margin-bottom: 10px;
+ }
+ 
+.ui-selectmenu-status {
+	display: block;
+ 	padding: 0 35px 0 15px;
+ }
+ 
+.ui-selectmenu.ui-state-hover,
+.ui-selectmenu.ul-state-active,
+.ui-selectmenu.ul-state-active a,
+.ui-selectmenu.ul-state-active a:hover {
+	text-decoration: none;
+	border: 1px solid #dfdfdf;
+	
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.02);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.02);
+	box-shadow: 0 0 10px rgba(0,0,0,0.02);
+}
+
+.ui-selectmenu.ui-state-hover .ui-selectmenu-status,
+.ui-selectmenu.ul-state-active .ui-selectmenu-status,
+.ui-selectmenu.ul-state-active a .ui-selectmenu-status,
+.ui-selectmenu.ul-state-active a:hover .ui-selectmenu-status {
+	color: #333;
+}	
+ 
+.ui-selectmenu-icon { 
+	position:absolute; 
+	right:6px; 
+	margin-top:-8px; 
+	top: 50%; 
+}
+
+.ui-selectmenu-menu { 
+	padding:0; margin:0; 
+	position:absolute; 
+	top: 0; 
+	display: none; 
+	z-index: 1005; /* z-index: 1005 to make selectmenu work with dialog */
+} 
+
+.ui-selectmenu-menu ul {
+	width: 100%;
+	padding:0; margin:0; 
+	list-style:none; 
+	position: relative; 
+	overflow: auto; 
+	overflow-y: auto; 
+	overflow-x: hidden; 
+	-webkit-overflow-scrolling: touch;
+}
+
+.ui-selectmenu-open { 
+	display: block; 
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	border-top: none;
+	padding: 5px 0;
+
+	-webkit-border-radius: 0 0 2px 2px;
+	-moz-border-radius: 0 0 2px 2px;
+	-o-border-radius: 0 0 2px 2px;
+	border-radius: 0 0 2px 2px;
+}
+
+ul.ui-selectmenu-menu-popup { 
+	margin-top: -1px; 
+}
+
+.ui-selectmenu-menu li { 
+	width: 100%;
+	margin: 0; 
+	display: block; 
+	border-top: 1px dotted transparent; 
+	border-bottom: 1px dotted transparent; 
+	border-right-width: 0 !important;
+	border-left-width: 0 !important; 
+}
+
+.ui-selectmenu-menu li a { 
+	display: block;
+	padding: 6px 15px;
+	color: #666;
+	display: block; 
+	outline:none; 
+	text-decoration:none; 
+	font-size: 14px;
+	line-height: 16px;
+	padding: 8px 15px;
+	border-bottom: 1px solid #f7f7f7;
+}
+
+.ui-selectmenu-menu li.heading a { 
+	font-weight: bold;
+	color: #333;
+}
+
+.ui-selectmenu-menu li:last-child a { 
+	border-bottom: none;
+}
+
+.ui-selectmenu-menu li.ul-state-hover a,
+.ui-selectmenu-menu li a:hover,
+a.ui-selectmenu:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+a.ui-selectmenu:hover {
+	border: 1px solid #dfdfdf;
+	
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.02);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.02);
+	box-shadow: 0 0 10px rgba(0,0,0,0.02);
+}
+
+
+.ui-selectmenu-menu li.ui-state-disabled a, 
+.ui-state-disabled { 
+	cursor: default; 
+}
+
+.ui-selectmenu-menu li.ui-selectmenu-hasIcon a,
+.ui-selectmenu-hasIcon .ui-selectmenu-status { 
+	position: relative; 
+}
+
+.ui-selectmenu-menu li .ui-icon, 
+.ui-selectmenu-status .ui-icon { 
+	position: absolute; 
+	top: 1em; 
+	margin-top: -8px; 
+	left: 0; 
+}
+
+
+.ui-selectmenu-menu li span,
+.ui-selectmenu-status span { 
+	display:block; 
+	margin-bottom: .2em; 
+}
+
+/* IE6 workaround (dotted transparent borders) */
+* html .ui-selectmenu-menu li { border-color: pink; filter:chroma(color=pink); width:100%; }
+* html .ui-selectmenu-menu li a { position: relative }
+/* IE7 workaround (opacity disabled) */
+*+html .ui-state-disabled, *+html .ui-state-disabled a { color: silver; }
+
+/* /////////////////////////////////
+	@2x Images
+///////////////////////////////// */
+
+@media  only screen and (-webkit-min-device-pixel-ratio: 1.5),  
+        only screen and (   min--moz-device-pixel-ratio: 1.5),  
+        only screen and (     -o-min-device-pixel-ratio: 3/2),  
+        only screen and (        min-device-pixel-ratio: 1.5),  
+        only screen and (min-resolution: 192dpi) {  
+
+	.ui-selectmenu,
+	.widget .ui-selectmenu {  
+		background-image: url('../media/arrow_down%402x.png');
+		-webkit-background-size: 9px 7px;
+		-moz-background-size: 9px 7px;
+		background-size: 9px 7px;
+ 	}        
+        
+}        

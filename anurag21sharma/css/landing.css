@@ -1,0 +1,577 @@
+/* /////////////////////////////////////
+	WebDAM Landing Page CSS 
+	by Alek Lisefski
+	http://www.bluesheepstudios.com
+///////////////////////////////////// */
+
+
+/* /////////////////////////////////
+	LAYOUT
+///////////////////////////////// */
+
+.landing .container { 
+	padding-top: 90px;
+	padding-bottom: 30px;
+}
+
+.landing.white .container { 
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+footer.landing .container { 
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.landing.white .col.half {
+	width: 50%;
+}
+
+/* /////////////////////////////////
+	GRIDS
+///////////////////////////////// */
+
+.landing.white .grid.fifths .item {
+	float: left;
+	width: 18%;
+	padding: 0 2% 0 0;
+	margin-bottom: 40px;
+	text-align: left;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.landing.white .grid.fifths .item h3 {
+	font-size: 17px;
+	line-height: 22px;
+	margin-bottom: 0;
+}
+
+.landing.white .grid.fifths .item .icon {
+	display: block;
+	width: 26px;
+	margin-bottom: 10px;
+}
+
+
+/* /////////////////////////////////
+	BASIC TEXT / HEADINGS
+///////////////////////////////// */
+
+
+.col.left h1 {
+	font: bold 30px/36px ProximaNova, arial, sans-serif; 
+	margin-bottom: 30px;
+	color: #333;
+	text-align: center;
+}
+
+h2 {
+	font: bold 36px/42px ProximaNova, arial, sans-serif; 
+	margin-bottom: 60px;
+}
+
+h3 {
+	font: bold 22px/30px ProximaNova, arial, sans-serif;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.align-left h4 {
+	margin-bottom: 30px;
+}
+
+.align-left h5 {
+	margin-bottom: 1px;
+}
+
+/* /////////////////////////////////
+	HEADER
+///////////////////////////////// */
+
+header { 
+	z-index: 101;
+	height: 65px;
+	border-bottom: 10px solid #fff;
+}
+
+header .container { 
+	padding-top: 21px;
+}
+
+header .phone {
+	float: right;
+	margin-top: 2px;
+}
+
+#logo {
+	float: left;
+	width: 154px;
+	height: 22px;
+	text-indent: -5000px;
+	font-size: 0;
+	background: url('../media/logo_landing.png') no-repeat left top;
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransfrom.Microsoft.
+		Alpha(Opacity=100)";
+	filter: alpha(opacity = 100);
+}
+
+
+#logo:hover {
+	opacity: 0.7;
+	-ms-filter: "progid:DXImageTransfrom.Microsoft.
+		Alpha(Opacity=70)";
+	filter: alpha(opacity = 70);
+	
+	-webkit-transition: opacity .2s ease;	
+	-moz-transition: opacity .2s ease;		
+	-o-transition: opacity .2s ease;		
+	transition: opacity .2s ease;
+}
+
+/* /////////////////////////////////
+	WHITE HEADER - NEW
+///////////////////////////////// */
+
+
+header.white {
+	background: #fff;
+	height: auto;
+}
+
+header.white .container { 
+	padding-top: 23px;
+	padding-bottom: 35px;
+}
+
+header.white #logo {
+	width: 184px;
+	height: 27px;
+	background: url('../media/logo.png') no-repeat left top;
+	-webkit-background-size: 184px 27px;
+	-moz-background-size: 184px 27px;
+	background-size: 184px 27px;
+	margin-bottom: 45px;
+}
+
+header.white #logo.shutterstock {
+	width: 184px;
+	height: 37px;
+	background: url('../media/logo_shutterstock.png') no-repeat left top;
+	-webkit-background-size: 184px 37px;
+	-moz-background-size: 184px 37px;
+	background-size: 184px 37px;
+	margin-bottom: 35px;
+}
+
+header.white .phone {
+	display: inline-block;
+	color: #333;
+	background: url('../media/icon_phone-footer.png') no-repeat left 2px;
+	float: right;
+	padding: 0 0 0 28px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+header.white h1 {
+	display: block;
+	clear: left;
+	text-align: left;
+	font-size: 40px;
+	line-height: 44px;
+	border: none;
+	background: none;
+	margin-bottom: 0;
+}
+
+header.white h4 {
+	text-align: left;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 0;
+}
+
+
+/* /////////////////////////////////
+	HERO BANNER
+///////////////////////////////// */
+
+
+#hero h4 {
+	font: normal 24px/30px ProximaNova, arial, sans-serif; 
+	margin-bottom: 40px;
+	padding: 0 40px;
+}
+
+#hero h4.small {
+	font: normal 20px/28px ProximaNova, arial, sans-serif; 
+	margin-bottom: 40px;
+	padding: 0;
+	color: #333;
+}
+
+#hero {
+	overflow: visible;
+	z-index: 99;
+}
+
+#hero .container {
+	padding-top: 70px;
+	padding-bottom: 0;
+}
+
+#hero .col.left {
+	width: 55%;
+	float: left;
+}
+
+#hero .col.left.narrow {
+	width: 47%;
+	float: left;
+}
+
+#hero .col.left img {
+	width: 90%;
+	padding: 0 5%;
+	max-width: 484px;
+	float: left;
+	margin-bottom: -6px;
+}
+
+#hero .col.left.narrow img {
+	width: 100%;
+	max-width: 453px;
+	padding: 0;
+}
+
+.form #demoForm {
+	margin-bottom: -280px;
+}
+
+#hero.form .col.left img {
+	margin-bottom: -18px;
+}
+
+.col.half {
+	float: left;
+	width: 46%;
+}
+
+.col.half.left {
+	margin-top: -40px;
+}
+
+.col.half.right {
+	margin-top: 170px;
+	float: right;
+	width: 38%;
+	max-width: 460px;
+	padding: 40px 40px 0 40px;
+}
+
+
+.landing .col.half.left li {
+	float: left;
+	width: 38%;
+	padding-right: 2%;
+}
+
+.col.left .item.testimonial {
+	margin-top: 30px;
+}
+
+/* /////////////////////////////////
+	FORM
+///////////////////////////////// */
+
+.landing.white #demoForm {
+	position: relative;
+	width: 30%;
+	padding: 25px 30px 5px 30px;
+	max-width: 381px;
+	margin-top: 0;
+	margin-bottom: 0;
+	float: right;
+	background: #f7f7f7;
+	background: rgba(255,255,255,0.8);
+	border: 0;
+	text-align: left;
+	z-index: 99;
+}
+
+#hero.landing.white {
+	background: url('../media/bg_hero.jpg') no-repeat center -100px;
+	-moz-box-shadow: inset 0 0 100px rgba(0,0,0,0.07);
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,0.07);
+	box-shadow: inset 0 0 100px rgba(0,0,0,0.07);
+}
+
+
+#hero.landing.white .container.top,
+#hero.landing.white .container {
+	padding-top: 0;
+	padding-bottom: 0;
+	position: relative;
+}
+
+#hero.landing.white .col.left {
+	width: 56%;
+	float: none;
+}
+
+#hero.landing.white img.bottom {
+	position: absolute;
+	bottom: 0;
+	left: 6%;
+	float: none;
+    margin: 0;
+    max-width: 560px;
+    width: 100%;
+    padding: 0;
+}
+
+.landing.white #demoForm h2,
+.video-box .col.half.padding h3 {
+	font-size: 28px;
+	line-height: 32px;
+	text-align: left;
+	margin-bottom: 0;
+}
+
+.landing.white #demoForm p {
+	margin-bottom: 10px;
+}
+
+.landing.white #demoForm input[type="text"],
+.landing.white #demoForm input[type="text"]:invalid,
+.landing.white #demoForm input[type="text"]:required,
+.landing.white #demoForm input[type="email"],
+.landing.white #demoForm input[type="email"]:invalid,
+.landing.white #demoForm input[type="email"]:required,
+.landing.white #demoForm textarea,
+.landing.white #demoForm textarea:invalid,
+.landing.white #demoForm textarea:required {
+	display: block;
+	width: 95%;
+	text-indent: 50px;
+	padding: 11px 5% 10px 0;
+	margin: 0 0 5px 0;
+	height: 24px;
+	border: 0;
+	outline: none;
+	-moz-box-shadow: none;
+	font: normal 18px/26px ProximaNova, arial, sans-serif;
+	color: #999;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 5px 3px;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
+	-webkit-transition: all .1s ease;	
+	-moz-transition: all .1s ease;			
+	-o-transition: all .1s ease;						
+	transition: all .1s ease;		
+
+}
+
+.landing.white #demoForm input[name="FirstName"],
+.landing.white #demoForm input[name="Referer_First_Name__c"] {
+	background-image: url('../media/icons/forms/firstName_black.png');
+}
+
+.landing.white #demoForm input[name="LastName"],
+.landing.white #demoForm input[name="Referer_Last_Name__c"] {
+	background-image: url('../media/icons/forms/lastName_black.png');
+}
+
+.landing.white #demoForm input[name="JobTitle"] {
+	background-image: url('../media/icons/forms/title_black.png');
+}
+
+.landing.white #demoForm input[name="Company"] {
+	background-image: url('../media/icons/forms/company_black.png');
+}
+
+.landing.white #demoForm input[name="Email"],
+.landing.white #demoForm input[name="Referer_Email__c"] {
+	background-image: url('../media/icons/forms/email_black.png');
+}
+
+.landing.white #demoForm input[name="Phone"] {
+	background-image: url('../media/icons/forms/phone_black.png');
+}
+
+.landing.white #demoForm textarea {
+	background-image: url('../media/icons/forms/message_black.html');
+}
+
+.landing.white #demoForm input[type="text"]:focus,
+.landing.white #demoForm input[type="email"]:focus,
+.landing.white #demoForm textarea:focus {
+	background-color: #f3f3f3;
+	color: #333;
+	
+	-webkit-transition: all .1s ease;	
+	-moz-transition: all .1s ease;			
+	-o-transition: all .1s ease;						
+	transition: all .1s ease;			
+}
+
+.landing.white #demoForm .mktFormMsg {
+    background: none repeat scroll 0 0 #014369;
+    border-radius: 2px;
+    color: #77cbf2;
+    display: block;
+    line-height: 30px;
+    margin: 0 0 10px;
+    padding: 0 10px;
+}
+
+.landing.white #demoForm .button, 
+.landing.white #demoForm input[type="submit"] {
+    display: block;
+    font: bold 28px/30px ProximaNovaCond,arial,sans-serif;
+    margin: 10px 0 0;
+    padding: 10px 10% 10px 0;
+    text-align: left;
+    text-indent: 20px;
+    width: 100%;
+}
+
+.landing.white #demoForm li#mktFrmButtons {
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+
+
+/* /////////////////////////////////
+	TESTIMONAIL VIDEO
+///////////////////////////////// */
+
+
+
+.landing.white .video-box {
+	background: #f7f7f7;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+.landing.white .video-box .col.half {
+	text-align: left;
+}
+
+.video-box .col.half.padding {
+	width: 38%;
+	padding: 5% 6% 4%;
+}
+
+.video-box .col.half.padding h3 {
+	margin-bottom: 20px;
+}
+
+.video-box .col.half.padding p {
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.video-box .video-frame {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-box .video-frame iframe,  
+.video-box .video-frame object,  
+.video-box .video-frame embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* /////////////////////////////////
+	Testimonials
+///////////////////////////////// */
+
+
+.grid.thirds.reviews .item.testimonial {
+	padding: 0 2.9% 0;
+	margin-bottom: 0;
+}
+
+
+/* /////////////////////////////////
+	@2x Images
+///////////////////////////////// */
+
+@media  only screen and (-webkit-min-device-pixel-ratio: 1.5),  
+        only screen and (   min--moz-device-pixel-ratio: 1.5),  
+        only screen and (     -o-min-device-pixel-ratio: 3/2),  
+        only screen and (        min-device-pixel-ratio: 1.5),  
+        only screen and (min-resolution: 192dpi) {  
+        
+	
+	#logo {
+		background-image: url('../media/logo_landing%402x.png');
+		-webkit-background-size: 154px 22px;
+		-moz-background-size: 154px 22px;
+		background-size: 154px 22px;
+	}
+	
+	header.white #logo {
+		background-image: url('../media/logo%402x.png');
+		-webkit-background-size: 184px 27px;
+		-moz-background-size: 184px 27px;
+		background-size: 184px 27px;
+	}
+	
+	header.white #logo.shutterstock {
+		background-image: url('../media/logo_shutterstock%402x.png');
+		-webkit-background-size: 184px 37px;
+		-moz-background-size: 184px 37px;
+		background-size: 184px 37px;
+	}
+	
+	.landing.white #demoForm input[name="FirstName"],
+	.landing.white #demoForm input[name="Referer_First_Name__c"] {
+		background-image: url('../media/icons/forms/firstName_black%402x.png');
+	}
+	
+	.landing.white #demoForm input[name="LastName"],
+	.landing.white #demoForm input[name="Referer_Last_Name__c"] {
+		background-image: url('../media/icons/forms/lastName_black%402x.png');
+	}
+	
+	.landing.white #demoForm input[name="JobTitle"] {
+		background-image: url('../media/icons/forms/title_black%402x.png');
+	}
+	
+	.landing.white #demoForm input[name="Company"] {
+		background-image: url('../media/icons/forms/company_black%402x.png');
+	}
+	
+	.landing.white #demoForm input[name="Email"],
+	.landing.white #demoForm input[name="Referer_Email__c"] {
+		background-image: url('../media/icons/forms/email_black%402x.png');
+	}
+	
+	.landing.white #demoForm input[name="Phone"] {
+		background-image: url('../media/icons/forms/phone_black%402x.png');
+	}
+	
+	.landing.white #demoForm textarea {
+		background-image: url('../media/icons/forms/message_black%402x.html');
+	}	
+	
+
+		
+}
