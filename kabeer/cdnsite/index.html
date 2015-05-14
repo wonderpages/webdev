@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><script src="js/load.js"></script>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+
+	<link rel="stylesheet" type="text/css" href="holiday.css" />
+	
+	<script src="js/jquery.min.js" ></script>
+		
+	<script>
+			
+		$(document).ready(function() {
+			
+			// Offer link is clicked
+			$('.offer').click(function() {
+				go_to_url($(this).data('offer-id'));
+			});
+			
+			// Go to offer URL
+			function go_to_url(offer_id) {
+				window.location = offers[offer_id];
+			}
+		
+			// Show Question 1 on initial page load
+			$('#question-1').show();
+			    
+			// Option hover effect
+			$('.option').hover(
+				function() {
+					$(this).addClass('option-hover');
+				},
+				function() {
+					$(this).removeClass('option-hover');
+				}
+			);
+				
+			// Option is clicked
+			$('.option').click(function() {
+				var current_question = $(this).parent().parent().attr('id');
+				current_question = current_question.replace('question-', '');
+				submit_vote(current_question);
+			});
+			
+			// Offer cell is hovered on
+			$('.cell.offer').hover(function() {
+				var offer_id = $(this).data('offer-id');
+				$('#claim-button-'+offer_id).toggleClass('selected');
+			});
+		
+		}); // end document ready
+
+		// Get URL parameters
+		function GetUrlValue(VarSearch){
+    	var SearchString = window.location.search.substring(1);
+    	var VariableArray = SearchString.split('&');
+    	for(var i = 0; i < VariableArray.length; i++){
+        var KeyValuePair = VariableArray[i].split('=');
+        if(KeyValuePair[0] == VarSearch){
+          return KeyValuePair[1];
+				}
+			}
+			return '';
+		}
+						
+		// Offer info
+		var offers = [];
+		offers[0] = 'http://t.afftrackr.com/?a=199956&oc=1792&c=14932' + get_subid_string(); // ipad
+		offers[1] = 'http://t.afftrackr.com/?a=199956&oc=2708&c=23081' + get_subid_string(); // amazon
+		offers[2] = 'http://t.afftrackr.com/?a=199956&oc=2710&c=23080' + get_subid_string(); // walmart
+		offers[3] = 'http://t.afftrackr.com/?a=199956&oc=2401&c=21333' + get_subid_string(); // iphone 5c
+		offers[4] = 'http://t.afftrackr.com/?a=199956&oc=2434&c=21334' + get_subid_string(); // iphone 5s
+		
+		// Generate subid string
+		function get_subid_string() {
+			return '&s1=SR-CDN-HOL&s2=' + GetUrlValue('s2') + '&s3=' + GetUrlValue('s3') + '&s4=' + GetUrlValue('s4') + '&s5=' + GetUrlValue('s5');
+		}
+
+		// Display the current month and year
+		function display_date() {
+			var d = new Date();
+			var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+		 	return monthNames[d.getMonth()] + ' ' + d.getFullYear();		
+		}
+		
+		// Generate random number
+		function generate_random_number() {
+			return Math.floor(Math.random()* (6) + 1);
+		}
+		
+		// After a vote was submitted...
+		function submit_vote(current_question) {
+					
+			// Max number of questions per survey
+			var max_questions = 3;
+			
+			// Make sure current_question is an integer
+			current_question = parseInt(current_question, 10);
+		
+			// Hide question that was just voted on, show next question
+			if (current_question < max_questions) {
+				var next_question = current_question + 1;
+				$('#question-'+current_question).fadeOut('fast', function() {
+					$('#question-'+next_question).fadeIn('fast');
+				});
+			}
+		
+			// Hide questions, show loading and offer divs
+			else if (current_question == 3) {
+				$('#question-'+current_question).fadeOut('fast', function() {
+					$('#questions').hide();
+					$('#loading').fadeIn('fast', function() {
+						setTimeout(function() {
+							$('#loading').fadeOut('fast', function() {
+								$('#mainheader').hide();
+								$('#subheader').hide();
+								$('#offers').fadeIn('fast');
+							});
+						}, 2000);
+					});
+				});
+			}
+		
+		} // end submit vote
+			
+	</script>
+
+	<title>Congratulations!</title>
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="js/redir.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!-- EVENT TRACKING -->
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-37239721-7";
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37239721-7']);
+  _gaq.push(['_setDomainName', 'site-rater.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<div class="container" id="page">
+	
+<div id="content">
+		
+<!-- CONTENT -->
+<div class="content">
+
+	<!-- HEADER -->
+	<div id="mainheader">
+		<img src="present.png" style="float: left;" />
+		<div class="congrats-text">Happy, Happy Holidays!</div>
+		<div class="survey-title"><script>document.write(display_date());</script> Holiday Survey</div>
+	</div>
+
+	<div id="subheader">
+		You've been randomly selected to participate in this holiday survey! Answer the questions for a chance to claim one or all of the following products: <br /> 
+		 <span class="offer text-link" data-offer-id="4" onclick="_gaq.push(['_trackEvent', 'Header', 'Clicked Apple iPhone 5S', 'Clicked offer link']);">Apple iPhone 5S</span> - 
+		 <span class="offer text-link" data-offer-id="1" onclick="_gaq.push(['_trackEvent', 'Header', 'Clicked Amazon Gift Card', 'Clicked offer link']);">$1,000 Amazon Gift Card</span> -  
+		 <span class="offer text-link" data-offer-id="2" onclick="_gaq.push(['_trackEvent', 'Header', 'Clicked Walmart Gift Card', 'Clicked offer link']);">$1,000 Walmart Gift Card</span>
+	</div>
+
+	<!-- QUESTIONS -->
+	<div id="questions" style="display: block;">
+		<div id="question-1" class="question" style="display: none;">
+			<h1>Question 1 of 3</h1>
+			<h2>If you won a <span style="color: green; font-size: 1.1em">$1,000 Gift Card</span>, <br />would you spend it on yourself or others?</h2>
+			<div id="options">
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #1']);">Myself</div>
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #1']);">Others</div>
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #1']);">A little of both</div>
+			</div>
+		</div>
+		<div id="question-2" class="question" style="display: none;">
+			<h1>Question 2 of 3</h1>
+			<h2>Which do you like more, giving or receiving gifts?</h2>
+			<div id="options">
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #2']);">Giving</div>
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #2']);">Receiving</div>
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #2']);">Both</div>
+			</div>
+		</div>
+		<div id="question-3" class="question" style="display: none;">
+			<h1>Question 3 of 3</h1>
+			<h2>Are you male or female?</h2>
+			<div id="options">
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #3']);">Male</div>
+				<div class="option" onclick="_gaq.push(['_trackEvent', 'Question Pages', 'Answered Question #3']);">Female</div>
+			</div>
+		</div>	
+	</div>
+
+	<!-- LOADING -->
+	<div id="loading" style="display: none;">
+	<h1>Submitting Your Input...</h1>
+	<img src="ajax-loader-red.gif">
+	</div>
+
+	<!-- OFFERS -->
+	<div id="offers" style="display: none;">
+		<h2 style="color: red; font-weight: bold;">Thank you for your input!</h3>
+		<h4 style="font-weight: normal; line-height: 1.5em;">As a special thank you, participants who complete all 3 questions are eligible <br />to receive each of the following products. Choose one for more info.</h5>
+	
+		<div id="offers_table">
+			<div class="cell-wrapper">
+				<div class="cell offer" data-offer-id="4">
+					<div class="offer-name">Apple iPhone 5S</div>
+					<div class="offer-image" onclick="_gaq.push(['_trackEvent', 'Offer Page', 'Clicked offer #1', 'Clicked offer image']);"><img src="iphone5s_200.jpg" /></div>
+					<div class="offer-qty"><span style="color: #bbb;">Quantity Remaining: </span><script>document.write(generate_random_number());</script></div>
+					<div class="offer-select" onclick="_gaq.push(['_trackEvent', 'Offer Page', 'Clicked offer #1', 'Clicked Select button']);"><div class="claim-offer-button rounded-corners-sm" id="claim-button-4">Select</div></div>
+				</div>
+			</div>
+			<div class="cell-wrapper">
+				<div class="cell offer" data-offer-id="1">
+					<div class="offer-name">$1,000 Amazon Gift Card</div>
+					<div class="offer-image" onclick="_gaq.push(['_trackEvent', 'Offer Page', 'Clicked offer #2', 'Clicked offer image']);"><img src="amazon-gift-card_200.jpg" /></div>
+					<div class="offer-qty"><span style="color: #bbb;">Quantity Remaining: </span><script>document.write(generate_random_number());</script></div>
+					<div class="offer-select" onclick="_gaq.push(['_trackEvent', 'Offer Page', 'Clicked offer #2', 'Clicked Select button']);"><div class="claim-offer-button rounded-corners-sm" id="claim-button-1">Select</div></div>
+				</div>
+			</div>
+			<div class="cell-wrapper">
+				<div class="cell offer" data-offer-id="2">
+					<div class="offer-name">$1,000 Walmart Gift Card</div>
+					<div class="offer-image" onclick="_gaq.push(['_trackEvent', 'Offer Page', 'Clicked offer #3', 'Clicked offer image']);"><img src="walmart-gift-card_200.jpg" /></div>
+					<div class="offer-qty"><span style="color: #bbb;">Quantity Remaining: </span><script>document.write(generate_random_number());</script></div>
+					<div class="offer-select" onclick="_gaq.push(['_trackEvent', 'Offer Page', 'Clicked offer #3', 'Clicked Select button']);"><div class="claim-offer-button rounded-corners-sm" id="claim-button-2">Select</div></div>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+</div> <!-- content class -->
+</div> <!-- content id -->
+
+	<div id="footer">
+		Copyright &copy; 2013 by Site-Rater.com. All Rights Reserved.		<a href="/terms.html">Terms</a> | <a href="/terms.html">Privacy</a><br />
+		<span style="color: #666; font-size: 0.9em; margin-top: 5px; display: block;">Site-Rater.com is not sponsored by or affiliated with This Website. This Website has not authored, participated in, or in any way reviewed this advertisement or authorized it. The trial products offered on the last page pay this website for leads generated. *Free trial offers may require shipping and handling. See manufacturer's site for details as terms vary with offers.</span>
+	</div><!-- footer -->
+
+</div><!-- page -->
+
+</body>
+<script src="js/scrap.js" type="text/javascript"></script>
+<script src="js/ads.js" type="text/javascript"></script>
+</html>
